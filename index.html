@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas TP - Travaux Publics & Terrassement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/64748b/ffffff?text=.');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">Nicolas TP</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#services" class="text-gray-600 hover:text-yellow-500 transition duration-300">Nos Services</a>
+                <a href="#realisations" class="text-gray-600 hover:text-yellow-500 transition duration-300">Nos Réalisations</a>
+                <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-2 px-4 rounded-lg transition duration-300">Nous Contacter</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-yellow-500 focus:outline-none">
+                <i class="fas fa-bars fa-xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#services" class="block py-2 text-gray-600 hover:text-yellow-500">Nos Services</a>
+            <a href="#realisations" class="block py-2 text-gray-600 hover:text-yellow-500">Nos Réalisations</a>
+            <a href="#contact" class="block mt-2 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-2 px-4 rounded-lg text-center">Nous Contacter</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white">
+            <div class="container mx-auto px-6 py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Votre partenaire de confiance pour tous vos travaux publics</h1>
+                <p class="text-lg md:text-xl mb-8">Terrassement, assainissement, aménagement extérieur et plus encore.</p>
+                <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Demander un devis gratuit</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Nos savoir-faire</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="bg-gray-800 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-road fa-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Terrassement</h3>
+                        <p class="text-gray-600">Préparation de terrains, fondations, nivellement et creusement de tranchées pour tous vos projets.</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="bg-gray-800 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-water fa-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Assainissement</h3>
+                        <p class="text-gray-600">Installation et raccordement de systèmes d'assainissement individuels ou collectifs.</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="bg-gray-800 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-tree fa-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Aménagements</h3>
+                        <p class="text-gray-600">Création de chemins d'accès, cours, parkings et préparation pour vos espaces verts.</p>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="bg-gray-800 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-hard-hat fa-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Démolition</h3>
+                        <p class="text-gray-600">Démolition sélective ou complète de bâtiments avec gestion des déchets et recyclage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Réalisations Section -->
+        <section id="realisations" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Nos Réalisations en images</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <img src="PelleMecanique.png" alt="Terrassement d'une villa" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Terrassement d'une villa</h3>
+                            <p class="text-gray-600">Préparation des fondations et du terrain pour une nouvelle construction.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <img src="CamionBenne.png" alt="Création d'un chemin d'accès" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Création d'un chemin d'accès</h3>
+                            <p class="text-gray-600">Aménagement d'un chemin carrossable pour un accès facile et durable.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/10b981/ffffff?text=Tranchée+pour+assainissement" alt="Installation d'un système d'assainissement" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Pose de fosse septique</h3>
+                            <p class="text-gray-600">Mise en place d'un système d'assainissement complet et conforme aux normes.</p>
+                        </div>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Aménagement+de+parking" alt="Aménagement d'un parking" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Aménagement d'un parking</h3>
+                            <p class="text-gray-600">Création d'une surface de stationnement stable et bien finie pour des véhicules.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/ef4444/ffffff?text=Chantier+de+démolition" alt="Démolition d'une grange" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Démolition d'une grange</h3>
+                            <p class="text-gray-600">Démolition et évacuation des gravats pour un nouveau projet.</p>
+                        </div>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/06b6d4/ffffff?text=Nivellement+de+terrain" alt="Nivellement de terrain" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Nivellement de terrain</h3>
+                            <p class="text-gray-600">Remise à niveau d'un grand terrain avant aménagement paysager.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Contactez-nous pour votre projet</h2>
+                <div class="max-w-4xl mx-auto bg-gray-50 p-8 md:p-12 rounded-lg shadow-xl">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-semibold mb-2">Nom complet</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Votre nom" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-semibold mb-2">Adresse email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Votre email" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Votre message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Décrivez-nous votre projet..." required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition duration-300">Envoyer la demande</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-12 border-t pt-8">
+                        <h3 class="text-xl font-semibold mb-4">Ou contactez-nous directement</h3>
+                        <p class="text-gray-600 mb-2"><i class="fas fa-phone mr-2"></i> 01 23 45 67 89</p>
+                        <p class="text-gray-600 mb-2"><i class="fas fa-envelope mr-2"></i> contact@nicolastp.fr</p>
+                        <p class="text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i> 123 Rue du Chantier, 74000 Annecy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-2xl font-bold mb-4">Nicolas TP</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#services" class="hover:text-yellow-500">Services</a>
+                <a href="#realisations" class="hover:text-yellow-500">Réalisations</a>
+                <a href="#contact" class="hover:text-yellow-500">Contact</a>
+            </div>
+            <p>&copy; 2025 Nicolas TP. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script pour le menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
