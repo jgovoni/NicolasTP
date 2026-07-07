@@ -29,8 +29,6 @@
         "legalName": "NICOLAS TP",
         "description": "Entreprise de terrassement et travaux publics : terrassement, assainissement, aménagements extérieurs et démolition.",
         "url": "https://www.nicolastp.fr/",
-        "telephone": "+33766072105",
-        "email": "matteo.nicolas.tp@gmail.com",
         "image": "https://www.nicolastp.fr/img/pelle-1024.jpg",
         "priceRange": "€€",
         "founder": {
@@ -162,9 +160,9 @@
                     <a href="#contact" class="bg-chantier hover:bg-chantier-dark text-anthracite-deep font-bold py-4 px-8 rounded text-center text-lg transition">
                         Demander un devis gratuit
                     </a>
-                    <a href="tel:+33766072105" class="border-2 border-white/70 hover:border-chantier hover:text-chantier text-white font-bold py-4 px-8 rounded text-center text-lg transition inline-flex items-center justify-center gap-2">
+                    <a href="#contact" data-tel class="border-2 border-white/70 hover:border-chantier hover:text-chantier text-white font-bold py-4 px-8 rounded text-center text-lg transition inline-flex items-center justify-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                        07 66 07 21 05
+                        <span data-tel-text>Afficher le numéro</span>
                     </a>
                 </div>
             </div>
@@ -306,18 +304,18 @@
                 <div class="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-5xl mx-auto">
                     <!-- Coordonnées directes -->
                     <div class="md:col-span-2 space-y-4">
-                        <a href="tel:+33766072105" class="flex items-center gap-4 bg-chantier text-anthracite-deep rounded-lg p-5 font-bold hover:bg-chantier-dark transition">
+                        <a href="#contact" data-tel class="flex items-center gap-4 bg-chantier text-anthracite-deep rounded-lg p-5 font-bold hover:bg-chantier-dark transition">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
                             <span>
                                 <span class="block text-xs uppercase tracking-wide opacity-70">Appelez-nous</span>
-                                <span class="text-lg">07 66 07 21 05</span>
+                                <span class="text-lg" data-tel-text>Afficher le numéro</span>
                             </span>
                         </a>
-                        <a href="mailto:matteo.nicolas.tp@gmail.com" class="flex items-center gap-4 bg-anthracite-deep border border-anthracite-light text-white rounded-lg p-5 font-bold hover:border-chantier transition">
+                        <a href="#contact" data-mail class="flex items-center gap-4 bg-anthracite-deep border border-anthracite-light text-white rounded-lg p-5 font-bold hover:border-chantier transition">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 shrink-0 text-chantier" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
                             <span>
                                 <span class="block text-xs uppercase tracking-wide text-gray-400">Écrivez-nous</span>
-                                <span class="text-lg break-all">matteo.nicolas.tp@gmail.com</span>
+                                <span class="text-lg break-all" data-mail-text>Afficher l'email</span>
                             </span>
                         </a>
                         <div class="flex items-center gap-4 bg-anthracite-deep border border-anthracite-light text-white rounded-lg p-5">
@@ -378,7 +376,7 @@
 
     <!-- Barre d'action sticky mobile -->
     <div class="fixed bottom-0 inset-x-0 z-50 grid grid-cols-2 md:hidden" role="navigation" aria-label="Actions rapides">
-        <a href="tel:+33766072105" class="flex items-center justify-center gap-2 bg-anthracite-deep border-t-2 border-chantier text-white font-bold py-4">
+        <a href="#contact" data-tel class="flex items-center justify-center gap-2 bg-anthracite-deep border-t-2 border-chantier text-white font-bold py-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-chantier" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
             Appeler
         </a>
@@ -389,6 +387,16 @@
     </div>
 
     <script>
+        // Coordonnées assemblées côté client : absentes du HTML brut pour
+        // éviter le moissonnage par les robots spammeurs
+        const TEL_PARTS = ['07', '66', '07', '21', '05'];
+        const TEL_HREF = 'tel:+33' + TEL_PARTS.join('').slice(1);
+        const MAIL = ['matteo', 'nicolas', 'tp'].join('.') + '@' + ['gmail', 'com'].join('.');
+        document.querySelectorAll('[data-tel]').forEach(a => a.href = TEL_HREF);
+        document.querySelectorAll('[data-tel-text]').forEach(el => el.textContent = TEL_PARTS.join(' '));
+        document.querySelectorAll('[data-mail]').forEach(a => a.href = 'mailto:' + MAIL);
+        document.querySelectorAll('[data-mail-text]').forEach(el => el.textContent = MAIL);
+
         // Menu mobile
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -409,7 +417,7 @@
             const message = document.getElementById('message').value.trim();
             const subject = encodeURIComponent(`Demande de devis — ${name}`);
             const body = encodeURIComponent(`Nom : ${name}\nTéléphone : ${phone || 'non renseigné'}\n\nProjet :\n${message}`);
-            window.location.href = `mailto:matteo.nicolas.tp@gmail.com?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:${MAIL}?subject=${subject}&body=${body}`;
         });
     </script>
 </body>
