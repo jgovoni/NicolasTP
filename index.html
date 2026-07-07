@@ -3,202 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolas TP - Travaux Publics & Terrassement</title>
+    <title>Nicolas TP — Terrassement & Travaux Publics à Annecy (74)</title>
+    <link rel="icon" type="image/png" href="img/favicon-180.png">
+    <link rel="apple-touch-icon" href="img/favicon-180.png">
+    <link rel="preload" as="image" href="img/pelle-1024.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        chantier: '#f5b800',        /* jaune sécurité */
+                        'chantier-dark': '#d9a300',
+                        anthracite: {
+                            DEFAULT: '#23272e',
+                            deep: '#181b20',
+                            light: '#2e333c',
+                        },
+                    },
+                    fontFamily: {
+                        display: ['"Archivo Black"', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('logo.png');
-            background-position: center 18%;
-            background-repeat: no-repeat;
+    </script>
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+        /* Liseré diagonal type balisage de chantier */
+        .hazard-stripe {
+            height: 12px;
+            background: repeating-linear-gradient(
+                -45deg,
+                #f5b800 0, #f5b800 16px,
+                #181b20 16px, #181b20 32px
+            );
+        }
+        .text-outline-chantier {
+            -webkit-text-stroke: 2px #f5b800;
+            color: transparent;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-anthracite-deep text-gray-100 font-sans antialiased">
 
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-900">Ni<span class="text-red-600">c</span>o<span class="text-red-600">l</span>a<span class="text-red-600">s</span> TP</a>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="#services" class="text-gray-600 hover:text-yellow-500 transition duration-300">Nos Services</a>
-                <a href="#realisations" class="text-gray-600 hover:text-yellow-500 transition duration-300">Nos Réalisations</a>
-                <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-2 px-4 rounded-lg transition duration-300">Nous Contacter</a>
+    <header class="bg-anthracite-deep/95 backdrop-blur sticky top-0 z-50 border-b border-anthracite-light">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center" aria-label="Navigation principale">
+            <a href="#" class="font-display text-xl sm:text-2xl tracking-tight text-white">
+                NICOLAS<span class="text-chantier">·</span>TP
+            </a>
+            <div class="hidden md:flex items-center gap-7">
+                <a href="#services" class="text-sm font-semibold text-gray-300 hover:text-chantier transition">Services</a>
+                <a href="#realisations" class="text-sm font-semibold text-gray-300 hover:text-chantier transition">Réalisations</a>
+                <a href="#zone" class="text-sm font-semibold text-gray-300 hover:text-chantier transition">Zone d'intervention</a>
+                <a href="#contact" class="bg-chantier hover:bg-chantier-dark text-anthracite-deep text-sm font-bold py-2.5 px-5 rounded transition">
+                    Devis gratuit
+                </a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-yellow-500 focus:outline-none">
-                <i class="fas fa-bars fa-xl"></i>
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-200 hover:text-chantier" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
             </button>
         </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
-            <a href="#services" class="block py-2 text-gray-600 hover:text-yellow-500">Nos Services</a>
-            <a href="#realisations" class="block py-2 text-gray-600 hover:text-yellow-500">Nos Réalisations</a>
-            <a href="#contact" class="block mt-2 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-2 px-4 rounded-lg text-center">Nous Contacter</a>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 border-t border-anthracite-light">
+            <a href="#services" class="block py-3 font-semibold text-gray-200 hover:text-chantier border-b border-anthracite-light">Services</a>
+            <a href="#realisations" class="block py-3 font-semibold text-gray-200 hover:text-chantier border-b border-anthracite-light">Réalisations</a>
+            <a href="#zone" class="block py-3 font-semibold text-gray-200 hover:text-chantier border-b border-anthracite-light">Zone d'intervention</a>
+            <a href="#contact" class="block mt-4 bg-chantier text-anthracite-deep font-bold py-3 px-5 rounded text-center">Devis gratuit</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero-bg text-white">
-            <div class="container mx-auto px-6 py-32 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Votre partenaire de confiance pour tous vos travaux publics</h1>
-                <p class="text-lg md:text-xl mb-8">Terrassement, assainissement, aménagement extérieur et plus encore.</p>
-                <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Demander un devis gratuit</a>
+        <!-- Hero -->
+        <section class="relative min-h-[85svh] flex items-end overflow-hidden">
+            <picture>
+                <source srcset="img/pelle-1024.webp" type="image/webp">
+                <img src="img/pelle-1024.jpg" alt="Pelle mécanique en plein terrassement d'une maison individuelle"
+                     class="absolute inset-0 w-full h-full object-cover object-center" fetchpriority="high">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-anthracite-deep via-anthracite-deep/60 to-anthracite-deep/20" aria-hidden="true"></div>
+
+            <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pb-16 pt-40 w-full">
+                <p class="inline-flex items-center gap-2 bg-chantier text-anthracite-deep text-xs sm:text-sm font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9.69 18.933l.003.001c.198.087.418.087.616 0l.003-.001.01-.004.035-.016a13.6 13.6 0 001.72-.964c1.014-.675 2.38-1.72 3.434-3.117C16.985 12.904 18 10.98 18 8.5 18 4.358 14.418 1 10 1S2 4.358 2 8.5c0 2.48 1.015 4.404 2.49 6.332 1.053 1.398 2.42 2.442 3.433 3.117a13.6 13.6 0 001.767.98zM10 11a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd"/></svg>
+                    Annecy · Haute-Savoie (74)
+                </p>
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-white uppercase max-w-3xl">
+                    Terrassement &amp;<br>
+                    <span class="text-chantier">travaux publics</span>
+                </h1>
+                <p class="mt-5 text-base sm:text-lg text-gray-200 max-w-xl">
+                    Terrassement, assainissement, aménagements extérieurs et démolition.
+                    Un interlocuteur unique, du devis à la fin du chantier.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md sm:max-w-none">
+                    <a href="#contact" class="bg-chantier hover:bg-chantier-dark text-anthracite-deep font-bold py-4 px-8 rounded text-center text-lg transition">
+                        Demander un devis gratuit
+                    </a>
+                    <a href="tel:+33123456789" class="border-2 border-white/70 hover:border-chantier hover:text-chantier text-white font-bold py-4 px-8 rounded text-center text-lg transition inline-flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        01 23 45 67 89
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="hazard-stripe" aria-hidden="true"></div>
+
+        <!-- Points forts -->
+        <section class="bg-anthracite border-b border-anthracite-light">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                <div>
+                    <p class="font-display text-chantier text-2xl">Devis gratuit</p>
+                    <p class="text-gray-400 text-sm mt-1">Réponse sous 48&nbsp;h, étude sur place sans engagement</p>
+                </div>
+                <div>
+                    <p class="font-display text-chantier text-2xl">Matériel adapté</p>
+                    <p class="text-gray-400 text-sm mt-1">Pelle mécanique et camion benne pour tous types de terrains</p>
+                </div>
+                <div>
+                    <p class="font-display text-chantier text-2xl">Artisan local</p>
+                    <p class="text-gray-400 text-sm mt-1">Entreprise de proximité basée sur le bassin annécien</p>
+                </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">Nos savoir-faire</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Service Card 1 -->
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                        <div class="bg-gray-800 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-road fa-2x"></i>
+        <!-- Services -->
+        <section id="services" class="py-16 sm:py-24 bg-anthracite-deep">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <p class="text-chantier font-bold uppercase tracking-widest text-sm mb-3">Nos savoir-faire</p>
+                <h2 class="font-display text-3xl sm:text-4xl text-white uppercase mb-12">Des services complets<br class="hidden sm:block"> pour votre terrain</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <article class="bg-anthracite border-l-4 border-chantier rounded-r-lg p-6 hover:bg-anthracite-light transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-chantier mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/>
+                        </svg>
+                        <h3 class="text-lg font-bold text-white mb-2">Terrassement</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Préparation de terrains, fouilles pour fondations, nivellement et creusement de tranchées.</p>
+                    </article>
+                    <article class="bg-anthracite border-l-4 border-chantier rounded-r-lg p-6 hover:bg-anthracite-light transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-chantier mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 6.5 6 11a6 6 0 11-12 0c0-4.5 6-11 6-11z"/>
+                        </svg>
+                        <h3 class="text-lg font-bold text-white mb-2">Assainissement</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Pose de fosses septiques, raccordements et systèmes d'assainissement individuels ou collectifs.</p>
+                    </article>
+                    <article class="bg-anthracite border-l-4 border-chantier rounded-r-lg p-6 hover:bg-anthracite-light transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-chantier mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 20l4-16m8 0l4 16M6.5 12h11M5.25 16h13.5M7.75 8h8.5"/>
+                        </svg>
+                        <h3 class="text-lg font-bold text-white mb-2">Aménagements extérieurs</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Chemins d'accès, cours, parkings et préparation de vos espaces verts.</p>
+                    </article>
+                    <article class="bg-anthracite border-l-4 border-chantier rounded-r-lg p-6 hover:bg-anthracite-light transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-chantier mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085"/>
+                        </svg>
+                        <h3 class="text-lg font-bold text-white mb-2">Démolition</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Démolition sélective ou complète avec évacuation des gravats et recyclage des déchets.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Réalisations -->
+        <section id="realisations" class="py-16 sm:py-24 bg-anthracite">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <p class="text-chantier font-bold uppercase tracking-widest text-sm mb-3">Sur le terrain</p>
+                <h2 class="font-display text-3xl sm:text-4xl text-white uppercase mb-12">Nos réalisations</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <figure class="group rounded-lg overflow-hidden bg-anthracite-deep border border-anthracite-light">
+                        <div class="overflow-hidden">
+                            <picture>
+                                <source srcset="img/pelle-640.webp 640w, img/pelle-1024.webp 1024w" sizes="(min-width: 768px) 33vw, 100vw" type="image/webp">
+                                <img src="img/pelle-640.jpg" srcset="img/pelle-640.jpg 640w, img/pelle-1024.jpg 1024w" sizes="(min-width: 768px) 33vw, 100vw"
+                                     alt="Pelle mécanique creusant les fondations d'une villa" width="640" height="640"
+                                     loading="lazy" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            </picture>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Terrassement</h3>
-                        <p class="text-gray-600">Préparation de terrains, fondations, nivellement et creusement de tranchées pour tous vos projets.</p>
-                    </div>
-                    <!-- Service Card 2 -->
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                        <div class="bg-gray-800 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-water fa-2x"></i>
+                        <figcaption class="p-5">
+                            <h3 class="font-bold text-white mb-1">Terrassement d'une villa</h3>
+                            <p class="text-gray-400 text-sm">Fouilles et préparation du terrain pour une construction neuve.</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="group rounded-lg overflow-hidden bg-anthracite-deep border border-anthracite-light">
+                        <div class="overflow-hidden">
+                            <picture>
+                                <source srcset="img/camion-640.webp 640w, img/camion-1024.webp 1024w" sizes="(min-width: 768px) 33vw, 100vw" type="image/webp">
+                                <img src="img/camion-640.jpg" srcset="img/camion-640.jpg 640w, img/camion-1024.jpg 1024w" sizes="(min-width: 768px) 33vw, 100vw"
+                                     alt="Camion benne déversant du gravier pour un chemin d'accès" width="640" height="640"
+                                     loading="lazy" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            </picture>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Assainissement</h3>
-                        <p class="text-gray-600">Installation et raccordement de systèmes d'assainissement individuels ou collectifs.</p>
-                    </div>
-                    <!-- Service Card 3 -->
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                        <div class="bg-gray-800 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-tree fa-2x"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Aménagements</h3>
-                        <p class="text-gray-600">Création de chemins d'accès, cours, parkings et préparation pour vos espaces verts.</p>
-                    </div>
-                    <!-- Service Card 4 -->
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                        <div class="bg-gray-800 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-hard-hat fa-2x"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Démolition</h3>
-                        <p class="text-gray-600">Démolition sélective ou complète de bâtiments avec gestion des déchets et recyclage.</p>
+                        <figcaption class="p-5">
+                            <h3 class="font-bold text-white mb-1">Création d'un chemin d'accès</h3>
+                            <p class="text-gray-400 text-sm">Empierrement d'un chemin carrossable, stable et durable.</p>
+                        </figcaption>
+                    </figure>
+                    <div class="rounded-lg border-2 border-dashed border-chantier/50 flex flex-col items-center justify-center text-center p-8 min-h-[16rem]">
+                        <p class="font-display text-2xl text-chantier uppercase mb-2">Votre chantier ici&nbsp;?</p>
+                        <p class="text-gray-400 text-sm mb-6">Parlez-nous de votre projet, nous nous déplaçons gratuitement pour l'étudier.</p>
+                        <a href="#contact" class="bg-chantier hover:bg-chantier-dark text-anthracite-deep font-bold py-3 px-6 rounded transition">Demander un devis</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Réalisations Section -->
-        <section id="realisations" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">Nos Réalisations en images</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                        <img src="PelleMecanique.png" alt="Terrassement d'une villa" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Terrassement d'une villa</h3>
-                            <p class="text-gray-600">Préparation des fondations et du terrain pour une nouvelle construction.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                        <img src="CamionBenne.png" alt="Création d'un chemin d'accès" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Création d'un chemin d'accès</h3>
-                            <p class="text-gray-600">Aménagement d'un chemin carrossable pour un accès facile et durable.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                        <img src="https://placehold.co/600x400/10b981/ffffff?text=Tranchée+pour+assainissement" alt="Installation d'un système d'assainissement" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Pose de fosse septique</h3>
-                            <p class="text-gray-600">Mise en place d'un système d'assainissement complet et conforme aux normes.</p>
-                        </div>
-                    </div>
-                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                        <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Aménagement+de+parking" alt="Aménagement d'un parking" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Aménagement d'un parking</h3>
-                            <p class="text-gray-600">Création d'une surface de stationnement stable et bien finie pour des véhicules.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                        <img src="https://placehold.co/600x400/ef4444/ffffff?text=Chantier+de+démolition" alt="Démolition d'une grange" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Démolition d'une grange</h3>
-                            <p class="text-gray-600">Démolition et évacuation des gravats pour un nouveau projet.</p>
-                        </div>
-                    </div>
-                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                        <img src="https://placehold.co/600x400/06b6d4/ffffff?text=Nivellement+de+terrain" alt="Nivellement de terrain" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Nivellement de terrain</h3>
-                            <p class="text-gray-600">Remise à niveau d'un grand terrain avant aménagement paysager.</p>
-                        </div>
-                    </div>
+        <!-- Zone d'intervention -->
+        <section id="zone" class="py-16 sm:py-24 bg-anthracite-deep">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <p class="text-chantier font-bold uppercase tracking-widest text-sm mb-3">Où intervenons-nous&nbsp;?</p>
+                    <h2 class="font-display text-3xl sm:text-4xl text-white uppercase mb-6">Annecy &amp;<br>toute la Haute-Savoie</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Basés sur le bassin annécien, nous intervenons chez les particuliers,
+                        les professionnels et les collectivités dans un rayon d'environ 50&nbsp;km
+                        autour d'Annecy. Au-delà, contactez-nous&nbsp;: on trouve toujours une solution.
+                    </p>
+                    <a href="#contact" class="inline-block text-chantier font-bold border-b-2 border-chantier hover:text-chantier-dark hover:border-chantier-dark transition">Vérifier que nous couvrons votre commune →</a>
                 </div>
+                <ul class="grid grid-cols-2 gap-3 text-sm">
+                    <li class="bg-anthracite rounded px-4 py-3 font-semibold text-gray-200">Annecy</li>
+                    <li class="bg-anthracite rounded px-4 py-3 font-semibold text-gray-200">Seynod</li>
+                    <li class="bg-anthracite rounded px-4 py-3 font-semibold text-gray-200">Épagny Metz-Tessy</li>
+                    <li class="bg-anthracite rounded px-4 py-3 font-semibold text-gray-200">Rumilly</li>
+                    <li class="bg-anthracite rounded px-4 py-3 font-semibold text-gray-200">Faverges-Seythenex</li>
+                    <li class="bg-anthracite rounded px-4 py-3 font-semibold text-gray-200">Thônes</li>
+                    <li class="bg-anthracite rounded px-4 py-3 font-semibold text-gray-200">La Balme-de-Sillingy</li>
+                    <li class="bg-anthracite rounded px-4 py-3 font-semibold text-gray-200">Alby-sur-Chéran</li>
+                </ul>
             </div>
         </section>
+        <div class="hazard-stripe" aria-hidden="true"></div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">Contactez-nous pour votre projet</h2>
-                <div class="max-w-4xl mx-auto bg-gray-50 p-8 md:p-12 rounded-lg shadow-xl">
-                    <form>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <!-- Contact -->
+        <section id="contact" class="py-16 sm:py-24 bg-anthracite">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <p class="text-chantier font-bold uppercase tracking-widest text-sm mb-3 text-center">Contact</p>
+                <h2 class="font-display text-3xl sm:text-4xl text-white uppercase mb-12 text-center">Parlons de votre projet</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-5xl mx-auto">
+                    <!-- Coordonnées directes -->
+                    <div class="md:col-span-2 space-y-4">
+                        <a href="tel:+33123456789" class="flex items-center gap-4 bg-chantier text-anthracite-deep rounded-lg p-5 font-bold hover:bg-chantier-dark transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                            <span>
+                                <span class="block text-xs uppercase tracking-wide opacity-70">Appelez-nous</span>
+                                <span class="text-lg">01 23 45 67 89</span>
+                            </span>
+                        </a>
+                        <a href="mailto:contact@nicolastp.fr" class="flex items-center gap-4 bg-anthracite-deep border border-anthracite-light text-white rounded-lg p-5 font-bold hover:border-chantier transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 shrink-0 text-chantier" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                            <span>
+                                <span class="block text-xs uppercase tracking-wide text-gray-400">Écrivez-nous</span>
+                                <span class="text-lg break-all">contact@nicolastp.fr</span>
+                            </span>
+                        </a>
+                        <div class="flex items-center gap-4 bg-anthracite-deep border border-anthracite-light text-white rounded-lg p-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 shrink-0 text-chantier" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9.69 18.933l.003.001c.198.087.418.087.616 0l.003-.001.01-.004.035-.016a13.6 13.6 0 001.72-.964c1.014-.675 2.38-1.72 3.434-3.117C16.985 12.904 18 10.98 18 8.5 18 4.358 14.418 1 10 1S2 4.358 2 8.5c0 2.48 1.015 4.404 2.49 6.332 1.053 1.398 2.42 2.442 3.433 3.117a13.6 13.6 0 001.767.98zM10 11a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd"/></svg>
+                            <span>
+                                <span class="block text-xs uppercase tracking-wide text-gray-400">Adresse</span>
+                                <span class="font-semibold">123 Rue du Chantier<br>74000 Annecy</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Formulaire (mailto : site 100% statique) -->
+                    <form id="contact-form" class="md:col-span-3 bg-anthracite-deep border border-anthracite-light rounded-lg p-6 sm:p-8 space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label for="name" class="block text-gray-700 font-semibold mb-2">Nom complet</label>
-                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Votre nom" required>
+                                <label for="name" class="block text-sm font-semibold text-gray-300 mb-1.5">Nom complet</label>
+                                <input type="text" id="name" name="name" required autocomplete="name" placeholder="Votre nom"
+                                       class="w-full px-4 py-3 rounded bg-anthracite border border-anthracite-light text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-chantier focus:border-transparent">
                             </div>
                             <div>
-                                <label for="email" class="block text-gray-700 font-semibold mb-2">Adresse email</label>
-                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Votre email" required>
+                                <label for="phone" class="block text-sm font-semibold text-gray-300 mb-1.5">Téléphone</label>
+                                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="06 12 34 56 78"
+                                       class="w-full px-4 py-3 rounded bg-anthracite border border-anthracite-light text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-chantier focus:border-transparent">
                             </div>
                         </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 font-semibold mb-2">Votre message</label>
-                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Décrivez-nous votre projet..." required></textarea>
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-300 mb-1.5">Votre projet</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet : type de travaux, commune, délais souhaités…"
+                                      class="w-full px-4 py-3 rounded bg-anthracite border border-anthracite-light text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-chantier focus:border-transparent"></textarea>
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition duration-300">Envoyer la demande</button>
-                        </div>
+                        <button type="submit" class="w-full bg-chantier hover:bg-chantier-dark text-anthracite-deep font-bold py-4 rounded text-lg transition">
+                            Envoyer ma demande de devis
+                        </button>
+                        <p class="text-xs text-gray-500 text-center">L'envoi ouvre votre messagerie avec le message pré-rempli.</p>
                     </form>
-                    <div class="text-center mt-12 border-t pt-8">
-                        <h3 class="text-xl font-semibold mb-4">Ou contactez-nous directement</h3>
-                        <p class="text-gray-600 mb-2"><i class="fas fa-phone mr-2"></i> 01 23 45 67 89</p>
-                        <p class="text-gray-600 mb-2"><i class="fas fa-envelope mr-2"></i> contact@nicolastp.fr</p>
-                        <p class="text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i> 123 Rue du Chantier, 74000 Annecy</p>
-                    </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-10">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-2xl font-bold mb-4">Nicolas TP</p>
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="#services" class="hover:text-yellow-500">Services</a>
-                <a href="#realisations" class="hover:text-yellow-500">Réalisations</a>
-                <a href="#contact" class="hover:text-yellow-500">Contact</a>
+    <footer class="bg-anthracite-deep border-t border-anthracite-light py-10 pb-24 md:pb-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div>
+                <p class="font-display text-xl text-white">NICOLAS<span class="text-chantier">·</span>TP</p>
+                <p class="text-gray-500 text-sm mt-1">Terrassement &amp; travaux publics — Annecy (74)</p>
             </div>
-            <p>&copy; 2025 Nicolas TP. Tous droits réservés.</p>
+            <nav class="flex gap-6 text-sm text-gray-400" aria-label="Navigation pied de page">
+                <a href="#services" class="hover:text-chantier">Services</a>
+                <a href="#realisations" class="hover:text-chantier">Réalisations</a>
+                <a href="#zone" class="hover:text-chantier">Zone</a>
+                <a href="#contact" class="hover:text-chantier">Contact</a>
+            </nav>
+            <p class="text-gray-500 text-sm">&copy; 2026 Nicolas TP. Tous droits réservés.</p>
         </div>
     </footer>
 
-    <script>
-        // Script pour le menu mobile
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+    <!-- Barre d'action sticky mobile -->
+    <div class="fixed bottom-0 inset-x-0 z-50 grid grid-cols-2 md:hidden" role="navigation" aria-label="Actions rapides">
+        <a href="tel:+33123456789" class="flex items-center justify-center gap-2 bg-anthracite-deep border-t-2 border-chantier text-white font-bold py-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-chantier" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            Appeler
+        </a>
+        <a href="#contact" class="flex items-center justify-center gap-2 bg-chantier text-anthracite-deep font-bold py-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+            Devis gratuit
+        </a>
+    </div>
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+    <script>
+        // Menu mobile
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('hidden');
+            menuButton.setAttribute('aria-expanded', String(!open));
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuButton.setAttribute('aria-expanded', 'false');
+        }));
+
+        // Formulaire mailto (site statique, pas de backend)
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const subject = encodeURIComponent(`Demande de devis — ${name}`);
+            const body = encodeURIComponent(`Nom : ${name}\nTéléphone : ${phone || 'non renseigné'}\n\nProjet :\n${message}`);
+            window.location.href = `mailto:contact@nicolastp.fr?subject=${subject}&body=${body}`;
         });
     </script>
 </body>
